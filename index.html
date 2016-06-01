@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>codeAgent</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+    <!-- 导航栏-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#responsive-navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="" class="navbar-brand"><strong>codeAgent</strong>.cn</a>
+            <div class="collapse navbar-collapse" id="responsive-navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="">主页</a></li>
+                    <li><a href="">其他</a></li>
+                    <li class="dropdown">
+                        <a id="dLabel"  data-toggle="dropdown"  href="">关于<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu"  aria-labelledby="dLabel">
+                            <li><a href="">JavaScript</a></li>
+                            <li><a href="">jQuery</a></li>
+                            <li><a href="">Bootstrap</a></li>
+                            <li><a href="">AngularJS</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form action="" class="navbar-form navbar-left">
+                    <input type="text" placeholder="搜索" class="form-control">
+                    <button type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </form>
+                <a href="" class="btn btn-primary btn-sm navbar-btn navbar-right"  data-toggle="modal" data-target="#myresume">我的简历</a>
+
+                <div class="profile navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="" data-toggle="modal" data-target="#login-modal">登录/注册</a></li><!--在href="loginform.html"也可以-->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- #myresume 我的简历-->
+    <div class="modal fade" id="myresume" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel1">我的简历</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- -->
+
+    <!-- #login-modal 登录-->
+    <div class="modal fade" id="login-modal" tabindex="-1"><!--加上data-backdrop="false"不会有暗色的背景。这里加上data-remote="loginform.html"也是可以的-->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4>用户登录</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="输入 Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密码</label>
+                            <input type="password" class="form-control" id="password" placeholder="输入密码">
+                        </div>
+                    </form>
+                    <span class="">还没有帐号？</span><a href="" data-toggle="modal" data-target="#register" data-dismiss="modal">去注册</a>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- #register 注册-->
+    <div class="modal fade" id="register" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4>用户注册</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="输入 Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密码</label>
+                            <input type="password" class="form-control" id="password" placeholder="输入密码">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">确认密码</label>
+                            <input type="password" class="form-control" id="password" placeholder="请再次输入密码">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 旋转木马-->
+    <div class="carousel slide" id="slideshow" data-interval="5000" data-pause="false" data-ride="carousel"><!--加这个不会循环data-wrap="false" 一开始就播放data-ride="carousel"-->
+
+        <ol class="carousel-indicators">
+            <li data-target="#slideshow" data-slide-to="0" class="active"></li>
+            <li data-target="#slideshow" data-slide-to="1"></li>
+            <li data-target="#slideshow" data-slide-to="2"></li>
+            <li data-target="#slideshow" data-slide-to="3"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="img/img-001.jpg" alt="">
+                <div class="carousel-caption">
+                    <h2>JavaScript</h2>
+                    <p class="hidden-xs" >JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/img-002.jpg" alt="">
+                <div class="carousel-caption">
+                    <h2>jQuery</h2>
+                    <p class="hidden-xs">jQuery是一套跨浏览器的JavaScript库，简化HTML与JavaScript之间的操作。</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/img-003.jpg" alt="">
+                <div class="carousel-caption">
+                    <h2>Bootstrap</h2>
+                    <p class="hidden-xs">Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/img-004.jpg" alt="">
+                <div class="carousel-caption">
+                    <h2>AngularJS</h2>
+                    <p class="hidden-xs">AngularJS诞生于2009年，由Misko Hevery 等人创建，后为Google所收购。是一款优秀的前端JS框架，已经被用于Google的多款产品当中。</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="#slideshow" data-slide="prev" class="left carousel-control">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#slideshow" data-slide="next" class="right carousel-control">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+    
+
+    <!-- 图片文字组-->
+    <div id="main-cont">
+        <i class="plume01 plume hidden-xs"></i>
+        <i class="plume02 plume hidden-xs"></i>
+        <i class="plume03 plume hidden-xs"></i>
+        <i class="plume04 plume hidden-xs"></i>
+        <i class="plume05 plume hidden-xs"></i>
+		<!--<iframe src="canvas.html"  marginheight=0 marginwidth=0  frameborder=0 scrolling=no></iframe>-->
+	
+	<!-- 旋转木马按键组-->   
+		<div class="text-center" style="padding: 20px;">
+			<div class="btn-group">
+				<button class="btn btn-default prev-slide">
+					<span class="glyphicon glyphicon-backward"></span>
+				</button>
+				<button class="btn btn-default play-and-stop">
+					<span class="glyphicon glyphicon-pause"></span>
+				</button>
+				<button class="btn btn-default next-slide">
+					<span class="glyphicon glyphicon-forward"></span>
+				</button>
+			</div>
+		</div>
+
+		<p class="visible-xs alert alert-info col-xs-12">用电脑访问效果更佳！</p>
+
+		<div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5 mainPicDiv" >
+                 <img src="img/p01.jpg" class="revealOnScroll mainPic" data-animation="revolve1" >
+            </div>
+            
+			<div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+                <h1 class="page-header">Freda</h1>
+                <p class="text-primary">Freda Bright says, "Only in opera do people die of love." It's true. You really can't love somebody to death. I've known people to die from no love, but I've never known anyone to be loved to death. We just can't love one another enough.</p>
+                <p class="text-primary morehidden">A heart-warming story tells of a woman who finally decided to ask her boss for a raise in salary. All day she felt nervous and apprehensive. Late in the afternoon she summoned the courage to approach her employer. To her delight, the boss agreed to a raise.</p>
+                <a class="morehiddenA">more &#187;&nbsp;</a>
+            </div>
+			<div class="col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div style="padding-top: 15px;">
+            <div class="col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-5 col-sm-push-6 col-md-push-5 col-lg-push-5 mainPicDiv" >
+                <img src="img/p02.jpg" class="revealOnScroll mainPic" data-animation="revolve2">
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5 col-sm-pull-6 col-md-pull-6 col-lg-pull-5">
+                <h1 class="page-header revealOnScroll lam2H" data-animation="revolve4">The woman</h1>
+                <p class="revealOnScroll lam2P" data-animation="revolve3">The woman arrived home that evening to a beautiful table set with their best dishes. Candles were softly glowing. Her husband had come home early and prepared a festive meal. She wondered if someone from the office had tipped him off, or... did he just somehow know that she would not get turned down?</p>
+                <p class="text-primary morehidden">She found him in the kitchen and told him the good news. They embraced and kissed, then sat down to the wonderful meal. Next to her plate the woman found a beautifully lettered note. It read, "Congratulations, darling! I knew you'd get the raise! These things will tell you how much I love you."</p>
+                <a class="morehiddenA">more &#187;&nbsp;</a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div style="padding-top: 15px;">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5 mainPicDiv" >
+                <img src="img/p03.jpg" class="revealOnScroll mainPic" data-animation="revolve5">
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+                <h1 class="page-header">Following</h1>
+                <p>Following the supper, her husband went into the kitchen to clean up. She noticed that a second card had fallen from his pocket. Picking it off the floor, she read, "Don't worry about not getting the raise! You deserve it anyway! These things will tell you how much I love you."</p>
+                <p class="text-primary morehidden">Someone has said that the measure of love is when you love without measure. What this man feels for his spouse is total acceptance and love, whether she succeeds or fails. His love celebrates her victories and soothes her wounds. He stands with her, no matter what life throws in their direction.</p>
+                <a class="morehiddenA">more &#187;&nbsp;</a>
+            </div>
+			<div class="col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+<div class="BtmDiv">
+<div class="buttomDiv">
+	<div class="container bDiv revealOnScroll" data-animation="ani-bPic">
+        <div>
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 bPicDiv"><img class="bPic" src="img/px01.jpg" data-anilg="bPicLargLeft" data-anism="bPicSmoLeft"></div>
+			<div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 bPicDiv"><img class="bPic" src="img/px02.jpg" data-anilg="bPicLargCenter" data-anism="bPicSmoCenter"></div>
+			<div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 bPicDiv"><img class="bPic" src="img/px03.jpg" data-anilg="bPicLargRight" data-anism="bPicSmoRight"></div>
+
+		</div>
+		<div class="clearfix"></div>
+		 <div>
+			<div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 bPicDiv"><img class="bPic" src="img/px04.jpg" data-anilg="bPicLargLeft" data-anism="bPicSmoLeft"></div>
+			<div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 bPicDiv"><img class="bPic" src="img/px05.jpg" data-anilg="bPicLargCenter" data-anism="bPicSmoCenter"></div>
+			<div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 bPicDiv"><img class="bPic" src="img/px06.jpg" data-anilg="bPicLargRight" data-anism="bPicSmoRight"></div>
+		</div>
+    </div>
+</div>
+
+
+    <div class="container">
+        <p class="alert alert-info">However mean your life is，meet it and live it; do not shun it and call it hard names. It is not so bad as you are. It looks poorest when you are richest. The fault-finder will find faults in paradise. Love your life, poor as it is. You may perhaps have some pleasant, thrilling, glorious hourss, even in a poor-house. The setting sun is reflected from the windows of the alms-house as brightly as from the rich man’s abode; the snow melts before its door as early in the spring. I do not see but a quiet mind may live as contentedly there, and have as cheering thoughts, as in a palace. The town’s poor seem to me often to live the most independent lives of any. May be they are simply great enough to receive without misgiving. Most think that they are above being supported by the town;but it often happens that they are not above supporting themselves by dishonest means. which should be more disreputable. Cultivate poverty like a garden herb, like sage. Do not trouble yourself much to get new things, whether clothes or friends, Turn the old, return to them. Things do not change; we change. Sell your clothes and keep your thoughts.</p>
+		<div style="width:50%;margin:20px auto 40px;">
+			<button href="" class="btn btn-success btn-lg btn-block"  data-toggle="modal" data-target="#adviceMe">给我建议</button>
+			<a href="" class="btn btn-success btn-lg btn-block"  data-toggle="modal" data-target="#">查看建议</a>
+		</div>
+	</div>
+</div>
+
+    <!-- /#adviceMe 给我建议-->
+    <div class="modal fade" id="adviceMe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel2">给我建议</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="" id="adviceForm">
+                        <div class="form-group">
+                            <label for="youname">你的名字</label>
+                            <input type="text" class="form-control" required name="youname" id="youname" placeholder="输入你的名字">
+                            <span id="younameSpan">&nbsp;</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="devicenameDiv">你的设备</label>
+                            <div class="radio" id="devicenameDiv">
+                                <label>
+                                    <input type="radio" name="usename" required value="0">
+                                    iphone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </label>
+                                <label>
+                                    <input type="radio" name="usename" required id="" value="1">
+                                    iphone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </label>
+                                <label>
+                                    <input type="radio" name="usename" required id="" value="2">
+                                    iphone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </label>
+
+                            </div>
+                            <span id="usenameSpan">&nbsp;</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="adviceBody">建议</label>
+                            <textarea class="form-control" rows="4" required name="advice" placeholder="输入你的建议" id="adviceBody"></textarea>
+                            <span id="adviceSpan">&nbsp;</span>
+                        </div>
+                </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="" id="adviceSbmit" class="btn btn-primary">提交</button>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+
+</html>
