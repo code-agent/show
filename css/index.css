@@ -14,6 +14,7 @@ img.mainPic{opacity:1;border-radius:10px;}
 p{word-break: break-all;}
 p:first-letter{padding-right:2px; font-weight:bold; font-size:2.5em;color:#f30; line-height:1.1em;}
 p.morehidden{display:none;}
+p.t-whilt{color:#fff;}
 a.morehiddenA{cursor:pointer;color:#f30;}
 
 @keyframes revolve1 {
@@ -121,7 +122,6 @@ i.plume05 {background: url("imgs/plume01.png") no-repeat;
     border: none;
 }
 @media(min-width: 768px) {
-    p.t-whilt{color:#fff;}
     .navbar-inverse button[type="submit"]{
         top:15%;
     }
